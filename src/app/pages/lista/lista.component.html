@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Radicado#</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Requerimiento</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Req. Inicial</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let solicitud of lista">
+            <th scope="row"><a class="color-blue" (click)="detail(solicitud.radicado)">{{solicitud.radicado}}</a></th>
+            <td>{{descTipo(solicitud.tipo)}}</td>
+            <td>{{solicitud.requerimiento}}</td>
+            <td>{{solicitud.fecha_sistema}}</td>
+            <td><a class="color-blue" (click)="detail(solicitud.origen)">{{solicitud.origen}}</a></td>
+        </tr>
+
+    </tbody>
+</table>

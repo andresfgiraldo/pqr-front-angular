@@ -1,0 +1,36 @@
+<!-- <app-pqr></app-pqr> -->
+<div class="container">
+
+    <h1 class="d-flex justify-content-center">{{mensaje}}</h1>
+    <h3 class="d-flex justify-content-center mb-3">{{mensaje2}}</h3>
+
+    <form [formGroup]="pqrForm" (ngSubmit)="crearPqr()">
+
+        <div class="row">
+
+            <div class="col-sm-6">
+                <label class="form-label">Tipo:</label>
+                <select class="form-select" formControlName="tipo">
+                    <option value="P">Petición</option>
+                    <option value="Q">Queja</option>
+                    <option value="R">Reclamo</option>
+                </select>
+            </div>
+
+
+            <div class="col-sm-6">
+                <label class="form-label">Radicado Anterior:</label>
+                <input type="text" class="form-control" formControlName="origen">
+            </div>
+        </div>
+
+        <div class="col-sm-12 mt-3 mb-5">
+            <label for="exampleFormControlTextarea1" class="form-label">Describa aquí su solicitud:</label>
+            <textarea class="form-control" rows="7" formControlName="requerimiento"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-secondary float-end" *ngIf="!enviado" [disabled]="pqrForm.invalid">Enviar</button>
+
+    </form>
+
+</div>

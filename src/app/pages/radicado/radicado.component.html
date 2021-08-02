@@ -1,0 +1,65 @@
+<div class="container container-fluid" *ngIf="solicitud">
+
+    <h1 class="d-flex justify-content-center">Detalle de solicitud</h1>
+
+    <div class="row">
+        <div class="col">
+            <label for="">Radicado #</label>
+            <p class="fw-bold"> {{solicitud.radicado}}</p>
+        </div>
+        <div class="col">
+            <label for="">Tipo Solicitud</label>
+            <p class="fw-bold"> {{descTipo(solicitud.tipo)}}</p>
+        </div>
+        <div class="col">
+            <label for="">Fecha Sistema</label>
+            <p class="fw-bold"> {{solicitud.fecha_sistema}}</p>
+        </div>
+    </div>
+
+    <div class="">
+        <h3>Requerimiento</h3>
+        <p>{{solicitud.requerimiento}}</p>
+    </div>
+
+    <div class="mt-3">
+        <h3>Respuesta</h3>
+        <p *ngIf="solicitud.respuesta">{{solicitud.respuesta}}</p>
+        <p *ngIf="!solicitud.respuesta">Aun no tiene respuesta</p>
+    </div>
+
+    <hr>
+
+    <div class="container" *ngIf="solicitud_origen">
+
+        <h4 class="d-flex justify-content-center">Solicitud origen</h4>
+
+        <div class="row">
+            <div class="col">
+                <label for="">Radicado #</label>
+                <p class="fw-bold"> {{solicitud_origen.radicado}}</p>
+            </div>
+            <div class="col">
+                <label for="">Tipo Solicitud</label>
+                <p class="fw-bold"> {{descTipo(solicitud_origen.tipo)}}</p>
+            </div>
+            <div class="col">
+                <label for="">Fecha Sistema</label>
+                <p class="fw-bold"> {{solicitud_origen.fecha_sistema}}</p>
+            </div>
+        </div>
+
+        <div class="">
+            <h3>Requerimiento</h3>
+            <p>{{solicitud_origen.requerimiento}}</p>
+        </div>
+
+        <div class="mt-3">
+            <h3>Respuesta</h3>
+            <p *ngIf="solicitud.respuesta">{{solicitud_origen.respuesta}}</p>
+            <p *ngIf="!solicitud.respuesta">Aun no tiene respuesta</p>
+        </div>
+
+        <hr>
+    </div>
+</div>
